@@ -11,6 +11,12 @@
 |
 */
 
+use Illuminate\Support\Facades\Cache;
+
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/cache', function () {
+    return Cache::get('key');
 });
