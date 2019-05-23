@@ -15,9 +15,9 @@ use Illuminate\Support\Facades\Cache;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
-Route::prefix('routeTests')->group(function () {
+Route::prefix('basics/routing/')->group(function () {
 
 
     Route::get('/cache', function () {
@@ -62,5 +62,13 @@ Route::prefix('routeTests')->group(function () {
     Route::get('/test-named-route', function () {
         return 'named route';
     })->name('namedRoute');
+
+});
+
+Route::prefix('basics/middleware/')->group(function () {
+
+    Route::get('test-age/{age}', function ($age) {
+        return 'test age: ' . $age;
+    })->middleware('check.age');
 
 });
