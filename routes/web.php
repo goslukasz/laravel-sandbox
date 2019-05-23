@@ -72,3 +72,10 @@ Route::prefix('basics/middleware/')->group(function () {
     })->middleware('check.age');
 
 });
+
+
+Route::prefix('basics/controllers/')->group(function () {
+
+    Route::get('user/{id}', 'Test@show');
+
+});
