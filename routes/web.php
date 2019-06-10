@@ -79,3 +79,8 @@ Route::prefix('basics/controllers/')->group(function () {
     Route::get('user/{id}', 'Test@show');
 
 });
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
